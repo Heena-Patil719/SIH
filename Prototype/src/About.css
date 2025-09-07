@@ -1,0 +1,49 @@
+.about {
+  display: flex;
+  justify-content: space-between;  /* balance text & image */
+  align-items: center;
+  gap: 4rem;                        /* spacing between text & image */
+  padding: 4rem 6rem;
+  background-color: #f9f9fb;
+  min-height: 80vh;
+}
+
+.about-left {
+  flex: 1.2;                        /* give text a bit more space */
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+  max-width: 800px;                 /* wider text box */
+  text-align: justify;              /* neat justified text */
+  padding-right: 2rem;              /* breathing space from image */
+}
+
+.about-left h2 {
+  font-size: 2.2rem;
+  color: #1a2b6d;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.about-left p {
+  margin-bottom: 1.5rem;
+}
+
+.about-left a {
+  color: #1a2b6d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;        /* align image neatly on the right */
+}
+
+.about-right img {
+  max-width: 420px;                 /* controlled image size */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Reset & Base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #111;
+}
+
+/* Container */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%; /* stretch full width dynamically */
+  display: flex;
+  justify-content: space-between; /* space items evenly */
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* spacing between links and login */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #1a2b6d;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1a2b6d;
+  border-bottom: 2px solid #1a2b6d;
+  padding-bottom: 2px;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 6px 14px;
+  border: 1px solid #27419a;
+  background-color: rgb(93, 70, 242);
+  color: #dee2ef;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn.active {
+  background-color: #1a2b6d;
+  color: white;
+  border: 1px solid #1a2b6d;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* push everything toward the right */
+  align-items: center;
+  padding: 3rem 6rem; /* increase right padding for spacing */
+  gap: 3rem; /* space between text and image */
+}
+
+.hero-left {
+  max-width: 550px;
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.4;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.highlight {
+  color: #1a2b6d;
+}
+
+.hero-left p {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 12px 22px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background-color: #1a2b6d;
+  color: white;
+  border: none;
+}
+
+.btn.primary:hover {
+  background-color: #27419a;
+}
+
+.btn.secondary {
+  background-color: white;
+  border: 1px solid #1a2b6d;
+  color: #1a2b6d;
+}
+
+.btn.secondary:hover {
+  background-color: #eef2ff;
+}
+
+/* Hero Image */
+.hero-right img {
+  width: 450px;
+  height: auto;
+}
+
+.hero-right {
+  margin-right: 70px; /* shift image a little left */
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-right img {
+    width: 280px;
+  }
+}

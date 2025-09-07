@@ -1,0 +1,141 @@
+/* Contact Section Layout */
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* align top instead of center */
+  padding: 4rem 6rem;
+  background-color: #f9f9fb;
+  min-height: 80vh;
+  gap: 5rem;
+}
+
+/* Left Side */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;  /* shift content slightly to left */
+}
+
+.contact-left h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.8rem;
+}
+
+.contact-left p {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1.8rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Email Info */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  margin-top: 1rem;
+  margin-left: 1rem; /* slightly more to the right */
+}
+
+.contact-info .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Main Image (top) */
+.contact-img {
+  margin-top: 2rem; /* increase main illustration size */
+  align-self: center;
+  height: 40px; /* center image */
+}
+
+/* Secondary Image (if any below) */
+.contact-img-small {
+  margin-top: 1rem;
+  max-width: 200px;  /* smaller image below */
+  align-self: center;
+}
+
+/* Right Side (Form) */
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; /* align top */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  margin-left: 200px;
+  margin-top: 200px
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #27419a;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  width: 400px;
+  height: 50px;
+  background-color: #fff;   
+  color: #000;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #1a2b6d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0d1a42;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .contact-info {
+    justify-content: center;
+
+  }
+
+  .contact-img,
+  .contact-img-small {
+    margin: 1.5rem auto 0 auto;
+  }
+}
