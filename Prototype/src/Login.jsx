@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import bcrypt from "bcryptjs"; // ✅ for hashing
+import bcrypt from "bcryptjs"; 
 import "./Login.css";
 
-export default function LoginPage() {
+export default function Login() {
   const [abhaId, setAbhaId] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  // Hardcoded credentials
-  const validAbhaId = "12345678";
-
-  // ✅ Store the hashed password instead of plain text
-  const validPasswordHash = bcrypt.hashSync("ABC@1234", 10);
+  // ✅ Hardcoded credentials
+  const users = [
+    {
+      abhaId: "12345678",
+      passwordHash: bcrypt.hashSync("ABC@1234", 10),
+      route: "/search",
+    },
+    {
+      abhaId: "P1234",
+      passwordHash: bcrypt.hashSync("P@1234", 10),
+      route: "/patient",
+    },
+  ];
 
   // Toggle password visibility
   const togglePasswordVisibility = () => {
@@ -24,19 +32,20 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (abhaId !== validAbhaId) {
+    const user = users.find((u) => u.abhaId === abhaId);
+
+    if (!user) {
       alert("Invalid ABHA ID");
       return;
     }
 
-    // ✅ Compare typed password with stored hash
-    if (!bcrypt.compareSync(password, validPasswordHash)) {
+    if (!bcrypt.compareSync(password, user.passwordHash)) {
       alert("Invalid Password");
       return;
     }
 
-    // Success -> navigate to search page
-    navigate("/search");
+    // ✅ Success -> navigate to assigned route
+    navigate(user.route);
   };
 
   return (
@@ -51,7 +60,7 @@ export default function LoginPage() {
           <a href="/">HOME</a>
           <a href="/about">ABOUT</a>
           <a href="/contact">CONTACT</a>
-          <button className="login-btn">LOGIN</button>
+          <button className="login-btn active">LOGIN</button>
         </div>
       </nav>
 

@@ -8,7 +8,6 @@ export default function SearchPage() {
   const [activeTab, setActiveTab] = useState("NAMASTE");
   const navigate = useNavigate();
 
-  // Sample Data matching the screenshots
   const data = [
     {
       id: "NAM001.001",
@@ -69,15 +68,13 @@ export default function SearchPage() {
     },
   ];
 
-  // Filter data by search and active tab
   const filtered = data.filter((item) => {
-    const matchesSearch = 
+    const matchesSearch =
       item.title.toLowerCase().includes(query.toLowerCase()) ||
       item.id.toLowerCase().includes(query.toLowerCase()) ||
       item.category.toLowerCase().includes(query.toLowerCase()) ||
       item.description.toLowerCase().includes(query.toLowerCase());
 
-    // Simple tab filtering logic
     if (activeTab === "NAMASTE") {
       return matchesSearch && (item.id.startsWith("NAM") || item.id.startsWith("SID"));
     }
@@ -85,21 +82,19 @@ export default function SearchPage() {
       return matchesSearch && item.id.startsWith("TM-");
     }
     if (activeTab === "Biomedicine") {
-      return matchesSearch; // Show all for biomedicine tab
+      return matchesSearch;
     }
-    
+
     return matchesSearch;
   });
 
   return (
     <div className="search-container">
-      {/* Header */}
       <div className="header">
         <h1>Search Browser</h1>
         <p>Search and explore NAMASTE codes and WHO international terminologies</p>
       </div>
 
-      {/* Search Bar */}
       <div className="search-bar">
         <div className="search-input-container">
           <Search className="search-icon" size={18} />
@@ -115,7 +110,6 @@ export default function SearchPage() {
         </button>
       </div>
 
-      {/* Tabs */}
       <div className="tabs">
         <button
           className={activeTab === "NAMASTE" ? "active" : ""}
@@ -137,20 +131,16 @@ export default function SearchPage() {
         </button>
       </div>
 
-      {/* Results */}
       <div className="results">
         {filtered.length === 0 ? (
           <div className="empty-state">
             <div className="empty-state-content">
               <h3>
-                {activeTab === "Biomedicine" 
+                {activeTab === "Biomedicine"
                   ? "Biomedicine terminology browser will be populated with ICD-11 Biomedicine codes"
-                  : "No results found"
-                }
+                  : "No results found"}
               </h3>
-              {activeTab === "Biomedicine" && (
-                <p>Integrated via WHO ICD-API</p>
-              )}
+              {activeTab === "Biomedicine" && <p>Integrated via WHO ICD-API</p>}
             </div>
           </div>
         ) : (
@@ -158,10 +148,14 @@ export default function SearchPage() {
             <div key={item.id} className="card">
               <div className="card-header">
                 <span className="code">{item.id}</span>
-                <span className={item.category === "Level 4" ? "level-4" : "tag"}>
+                <span
+                  className={
+                    item.category === "Level 4" ? "level-4" : "tag"
+                  }
+                >
                   {item.category}
                 </span>
-                <div style={{ marginLeft: 'auto' }}>
+                <div style={{ marginLeft: "auto" }}>
                   <Search size={16} color="#666" />
                 </div>
               </div>
@@ -181,7 +175,9 @@ export default function SearchPage() {
                   <h4>Code Mappings</h4>
                   <div className="mappings">
                     <span className="mapping">{item.mappings.who}</span>
-                    <span className="mapping">Biomedicine {item.mappings.biomedicine}</span>
+                    <span className="mapping">
+                      Biomedicine {item.mappings.biomedicine}
+                    </span>
                   </div>
                 </div>
               )}

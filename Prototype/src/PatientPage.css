@@ -1,0 +1,187 @@
+.patient-container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background: #f7faff;
+}
+
+/* Patient Header */
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eaf7f4;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.patient-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-image: url('/pfp.jpg'); /* ✅ correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc; /* Optional for border */
+}
+
+.patient-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.patient-info p {
+  margin: 0.2rem 0;
+  color: #555;
+}
+
+.patient-info .blood {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.patient-contact p {
+  margin: 0.2rem 0;
+  color: #333;
+}
+
+/* Grid Layout */
+.patient-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Vitals */
+.vitals {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.vitals div {
+  background: #f8f9fa;
+  flex: 1;
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.vitals div span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.vitals .highlight {
+  background: #e6f9e9;
+  color: #0a8d2d;
+}
+
+/* Consultations */
+.consultation {
+  padding: 1rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #fdfdfd;
+  position: relative;
+}
+
+.consultation h4 {
+  margin: 0;
+}
+
+.role {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.diagnosis {
+  margin: 0.8rem 0;
+  background: #f3f6ff;
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+
+.status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status.completed {
+  background: #e6f9e9;
+  color: #0a8d2d;
+}
+
+.status.normal {
+  background: #f0f9ff;
+  color: #0275d8;
+}
+
+/* Reports */
+.report {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Upcoming Appointment */
+.appointment {
+  padding: 0.8rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+/* Medications */
+.med {
+  padding: 0.8rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  background: #fafafa;
+}
+
+/* Health Score */
+.health h1 {
+  font-size: 2.5rem;
+  color: #1a2b6d;
+  margin: 0.5rem 0;
+}
+
+.progress {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.progress .bar {
+  width: 85%;
+  height: 100%;
+  background: #0a8d2d;
+  border-radius: 6px;
+}

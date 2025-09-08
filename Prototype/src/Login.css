@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Dancing+Script:wght@600&display=swap');
 
-
 /* Reset & Base */
 body, html {
   margin: 0;
@@ -27,22 +26,20 @@ body, html {
   border-bottom: 1px solid #ccc;
 }
 
-
 .logo {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* increased spacing */
+  gap: 1.5rem;
 }
 
-
 .logo img {
-  height: 6 0px;
+  height: 60px;
   width: 100px;
 }
 
 .brand-text {
   font-size: 1.8rem;
- font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: #1a2b6d;
   letter-spacing: 2px;
@@ -69,6 +66,20 @@ body, html {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.login-btn.active {
+  background-color: #1a2b6d;
+  color: white;
+  border: 1px solid #1a2b6d;
+}
+
+.login-btn:hover {
+  background-color: #eef2ff;
+}
+
+.login-btn.active:hover {
+  background-color: #27419a;
 }
 
 /* Login Section */
@@ -129,9 +140,13 @@ body, html {
   width: 100%;
 }
 
+.submit-btn:hover {
+  background-color: #27419a;
+}
+
 /* Image Section */
 .image-section {
-  margin-left: 100px; 
+  margin-left: 100px;
 }
 
 .image-section img {
@@ -139,30 +154,40 @@ body, html {
   height: 600px;
 }
 
-.login-btn.active {
-  background-color: #1a2b6d; /* dark blue */
-  color: white;
-  border: 1px solid #1a2b6d;
-}
-
-.login-btn:hover {
-  background-color: #eef2ff;
-}
-
-.login-btn.active:hover {
-  background-color: #27419a;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .login-box {
     flex-direction: column;
     gap: 2rem;
+    margin-left: 0;
   }
   .login-form {
     margin-left: 0;
   }
+  .image-section {
+    margin-left: 0;
+  }
   .image-section img {
     width: 280px;
+    height: auto;
   }
 }
+
+/* Toggle password icon */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+
