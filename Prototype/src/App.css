@@ -172,6 +172,29 @@ body, html {
   margin-right: 70px; /* shift image a little left */
 }
 
+/* Google Translate button spacing */
+.translate-btn {
+  margin-left: 1rem;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1a2b6d;
+  color: white;
+  text-align: center;   /* looks cleaner */
+  padding: 0.2rem;        /* adds height naturally */
+  margin-top: auto;     /* pushes footer to bottom */
+  font-size: 0.9rem;
+  width: 100%;          /* full width */
+  box-sizing: border-box;
+}
+
+
 
 /* Responsive */
 @media (max-width: 900px) {
