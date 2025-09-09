@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./App.css";
-
+import ChatPage from "./ChatPage";
 import LoginPage from "./Login";
 import About from "./About";
 import Contact from "./Contact";
@@ -29,10 +29,16 @@ function Navbar() {
           <Link to="/" className={location.pathname === "/" ? "active" : ""}>
             HOME
           </Link>
-          <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>
+          <Link
+            to="/about"
+            className={location.pathname === "/about" ? "active" : ""}
+          >
             ABOUT
           </Link>
-          <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>
+          <Link
+            to="/contact"
+            className={location.pathname === "/contact" ? "active" : ""}
+          >
             CONTACT
           </Link>
         </div>
@@ -68,7 +74,7 @@ function Home() {
         </div>
       </div>
       <div className="hero-right">
-        <img src="/doctor.png" alt="Doctor" className="doctor-img" />
+        <img src="/home.png" alt="Doctor" className="doctor-img" />
       </div>
     </section>
   );
@@ -92,7 +98,7 @@ export default function App() {
       new window.google.translate.TranslateElement(
         {
           pageLanguage: "en",
-          includedLanguages: "en,hi,ta,te,bn,ml,gu,mr,ur", // Add languages you want
+          includedLanguages: "en,hi,ta,te,bn,ml,gu,mr,ur",
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
         },
         "google_translate_element"
@@ -108,37 +114,44 @@ export default function App() {
 
   return (
     <Router>
-      <Navbar />
+      <div className="app">
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/patient" element={<PatientPage />} />
-      </Routes>
+        {/* Main content area */}
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/patient" element={<PatientPage />} />
+        <Route path="/chat" element={<ChatPage />} />
+          </Routes>
+        </div>
 
-      {/* Floating Translate Button */}
-      <div className="translate-floating-wrapper">
-        <button
-          className="translate-btn-circle"
-          onClick={() => setShowTranslate(!showTranslate)}
-        >
-          🌐
-        </button>
+        {/* Floating Translate Button */}
+        <div className="translate-floating-wrapper">
+          <button
+            className="translate-btn-circle"
+            onClick={() => setShowTranslate(!showTranslate)}
+          >
+            🌐
+          </button>
 
-        {showTranslate && (
-          <div id="google_translate_element" className="translate-dropdown"></div>
-        )}
+          {showTranslate && (
+            <div
+              id="google_translate_element"
+              className="translate-dropdown"
+            ></div>
+          )}
+        </div>
+
+        {/* Footer */}
+        <footer className="footer">
+          <p>© 2025 NAMASTE. All Rights Reserved By Nexa6.</p>
+        </footer>
       </div>
-
-      {/* Footer */}
-      <footer className="footer">
-        <p>© 2025 NAMASTE. All Rights Reserved By Nexa6.</p>
-      </footer>
     </Router>
   );
-
-  
 }

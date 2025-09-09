@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, Filter } from "lucide-react";
+import { MessageCircle } from "lucide-react"; 
 import "./searchPage.css";
 
 export default function SearchPage() {
@@ -94,6 +95,15 @@ export default function SearchPage() {
         <h1>Search Browser</h1>
         <p>Search and explore NAMASTE codes and WHO international terminologies</p>
       </div>
+
+
+<div className="chatbot-launch">
+  <button className="chatbot-btn" onClick={() => navigate("/chat")}>
+    <MessageCircle size={20} style={{ marginRight: "8px" }} />
+    CHATBOT
+  </button>
+</div>
+
 
       <div className="search-bar">
         <div className="search-input-container">
