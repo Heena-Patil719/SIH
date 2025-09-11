@@ -13,6 +13,7 @@ import About from "./About";
 import Contact from "./Contact";
 import SearchPage from "./SearchPage";
 import PatientPage from "./PatientPage";
+import DetailsPage from "./DetailsPage";
 
 function Navbar() {
   const location = useLocation();
@@ -122,6 +123,7 @@ export default function App() {
             <Route path="/search" element={<SearchPage />} />
             <Route path="/patient" element={<PatientPage />} />
             <Route path="/chat" element={<ChatPage />} />
+             <Route path="/details/:id" element={<DetailsPage />} />
           </Routes>
         </div>
 

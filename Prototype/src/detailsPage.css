@@ -1,0 +1,55 @@
+.details-container {
+  max-width: 1200px;   /* wider card */
+  margin: 2rem 2rem;   /* center on screen with spacing */
+  padding: 2rem;       /* restore comfy padding */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.back-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;   /* bigger heading for wide card */
+}
+
+.definition {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.codes p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.conditions {
+  margin-top: 1.2rem;
+}
+
+.conditions h4 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.chart-section {
+  margin-top: 1rem;
+}
+
+.small-chart {
+  width: 250px;   /* very small size */
+  height: 250px;
+  margin: 0 auto; /* center it */
+}
