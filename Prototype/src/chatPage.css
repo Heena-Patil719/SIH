@@ -94,11 +94,14 @@
 
 /* INPUT */
 .chat-input {
+  
   display: flex;
   padding: 10px;
   border-top: 1px solid #ddd;
 }
 .chat-input input {
+   background-color: #fff;      /* ✅ white container */
+  border: 1px solid #ddd;   
   flex: 1;
   padding: 10px;
   border: 1px solid #ddd;
