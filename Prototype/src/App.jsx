@@ -20,8 +20,8 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-left">
-        <img src="/logo.png" alt="Logo" className="logo" />
-        <span className="brand">NAMASTE</span>
+        <img src="/logo.jpeg" alt="Logo" className="logo" />
+        <span className="brand">CareSync</span>
       </div>
 
       <div className="nav-right">

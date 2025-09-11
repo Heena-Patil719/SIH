@@ -28,6 +28,7 @@ body, html {
   top: 0;
   left: 0;
   right: 0;
+  height: 55px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -52,7 +53,7 @@ body, html {
 }
 
 .logo {
-  height: 60px;
+  height: 55px;
   width: auto;
 }
 
@@ -169,7 +170,6 @@ body, html {
   background-color: #eef2ff;
 }
 
-/* Hero Image */
 .hero-right img {
   width: 700px;
   height: 600px;
@@ -179,21 +179,21 @@ body, html {
   margin-right: 30px;
 }
 
-/* Google Translate button spacing */
 .translate-btn {
   margin-left: 1rem;
 }
 
-/* Footer */
 .footer {
   background-color: #1a2b6d;
   color: white;
   text-align: center;
-  padding: 0.8rem 0;
-  margin-top: auto; /* pushes footer to bottom */
   font-size: 0.9rem;
-  width: 1380px;
-  box-sizing: border-box;
+  padding: 1px 0;
+
+  /* Full width */
+  position: relative;
+  width: 100vw;   /* instead of 100% */
+  margin-left: calc(-50vw + 50%); /* escape parent max-width */
 }
 
 /* Floating Translate Button */
