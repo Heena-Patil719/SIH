@@ -81,10 +81,9 @@ function Home() {
 }
 
 export default function App() {
-  const [showTranslate, setShowTranslate] = useState(false);
-
   useEffect(() => {
     const addScript = () => {
+      if (document.getElementById("google-translate-script")) return;
       const script = document.createElement("script");
       script.src =
         "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
@@ -93,7 +92,6 @@ export default function App() {
       document.body.appendChild(script);
     };
 
-    // Define callback globally
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement(
         {
@@ -105,12 +103,8 @@ export default function App() {
       );
     };
 
-    if (!window.google || !window.google.translate) {
-      addScript();
-    } else {
-      window.googleTranslateElementInit();
-    }
-  }, [showTranslate]);
+    addScript();
+  }, []);
 
   return (
     <Router>
@@ -126,25 +120,40 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/patient" element={<PatientPage />} />
-        <Route path="/chat" element={<ChatPage />} />
+            <Route path="/chat" element={<ChatPage />} />
           </Routes>
         </div>
 
-        {/* Floating Translate Button */}
-        <div className="translate-floating-wrapper">
+        {/* Floating Translate + Chatbot */}
+        <div className="floating-wrapper">
+          {/* Translate Button */}
           <button
             className="translate-btn-circle"
-            onClick={() => setShowTranslate(!showTranslate)}
+            onClick={() => {
+              const el = document.getElementById("google_translate_element");
+              if (el.style.display === "none" || el.style.display === "") {
+                el.style.display = "block";
+              } else {
+                el.style.display = "none";
+              }
+            }}
           >
             🌐
           </button>
 
-          {showTranslate && (
-            <div
-              id="google_translate_element"
-              className="translate-dropdown"
-            ></div>
-          )}
+          {/* Always mounted, hidden by default */}
+          <div
+            id="google_translate_element"
+            className="translate-dropdown"
+            style={{ display: "none" }}
+          ></div>
+
+          {/* Chatbot Button */}
+          <Link to="/chat">
+            <button className="chatbot-btn-circle">
+              <img src="/bot.jpg" alt="Chatbot" className="chatbot-icon" />
+            </button>
+          </Link>
         </div>
 
         {/* Footer */}
