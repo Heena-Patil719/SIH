@@ -2,6 +2,8 @@
 
 /* Reset & Base */
 body, html {
+  margin-top: 2px;
+  height: auto;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #f5f7fa;
@@ -9,6 +11,7 @@ body, html {
 
 /* Container */
 .container {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,6 +19,9 @@ body, html {
 
 /* Navbar */
 .navbar {
+  
+  margin-bottom: 0;
+  padding-bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -26,6 +32,8 @@ body, html {
 }
 
 .logo {
+  width: 2px;
+  height: 2px;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -83,12 +91,11 @@ body, html {
 
 /* Login Section */
 .login-section {
-  margin-top: 10px;
+  margin-top:auto;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
 }
 
 .login-box {

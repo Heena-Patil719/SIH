@@ -23,6 +23,7 @@ function Navbar() {
         <img src="/logo.jpeg" alt="Logo" className="logo" />
         <span className="brand">CareSync</span>
       </div>
+      
 
       <div className="nav-right">
         <div className="nav-links">

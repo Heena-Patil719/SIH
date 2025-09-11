@@ -53,8 +53,8 @@ export default function Login() {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
-          <img src="/logo.png" alt="Logo" />
-          <span className="brand-text">NAMASTE</span>
+          <img src="/logo.jpeg" alt="Logo" />
+          <span className="brand-text">CareSync</span>
         </div>
         <div className="nav-links">
           <a href="/">HOME</a>
